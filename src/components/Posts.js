@@ -7,9 +7,9 @@ export const Posts = ({ posts, loading}) => {
     }
 
     return (
-        <ul className='mb-2'>
+        <ul className='mb-4'>
            {posts.map(post => {
-               return (<li className= 'text-lg border border-gray-200 p-4' key={post.id}>{post.title}</li>);
+               return (<li className ={`text-lg border p-4 ${(post.id%2 === 0) ? 'bg-green-100 border-none' : '  border-t-green-300'}`} key={post.id}>{post.title}</li>);
            })} 
         </ul>
     )

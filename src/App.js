@@ -4,7 +4,7 @@ import { useAxios } from './hooks/useAxios';
 import axios from "axios";
 import { Posts } from './components/Posts';
 import { Pagination } from './components/Pagination';
-import './assets/main.css'
+
 
 export const App = () => {
   const {loading, data:posts} = useAxios('https://jsonplaceholder.typicode.com/posts');
@@ -21,9 +21,9 @@ export const App = () => {
 
   const paginate = (pageNumber) =>setCurrentPage(pageNumber)
   return (
-    <div className = 'container mx-auto '>
-      <h1 className='bg-gradient-to-r from-green-400 to-blue-500 text-black text-5xl p-3 my-3'>My posts</h1>
-      <div className ='bg-gray-50 p-5 '>
+    <div className = 'container mx-auto' style={{width: '80vw'}}>
+      <h1 className='bg-green-600 text-white text-5xl p-3 my-3 text-center rounded-md'>My posts</h1>
+      <div className ='bg-white p-5 rounded-md'>
         <Posts  posts={currentPosts} loading={loading}/>
         <Pagination postsPerPage = {postsPerPage} totalPosts = {posts?.length} paginate = { paginate } />
       </div>
